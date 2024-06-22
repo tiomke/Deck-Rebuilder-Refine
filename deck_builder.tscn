@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://cftpv2sqx3war"]
+
+[ext_resource type="Script" path="res://deck_builder.gd" id="1_mvunw"]
+
+[node name="DeckBuilder" type="Node2D"]
+script = ExtResource("1_mvunw")
+
+[node name="Control" type="CenterContainer" parent="."]
+offset_right = 599.0
+offset_bottom = 300.0
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "这里是各种描述信息"
+
+[node name="Btns" type="HBoxContainer" parent="Control/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Finish" type="Button" parent="Control/HBoxContainer"]
+layout_mode = 2
+text = "End Turn"
+
+[connection signal="pressed" from="Control/HBoxContainer/Finish" to="." method="_on_finish_pressed"]
