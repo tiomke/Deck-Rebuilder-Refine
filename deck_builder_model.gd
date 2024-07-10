@@ -75,9 +75,9 @@ func start_level(level):
 	auto_fight()
 	pass
 func draw_hand_cards(num,bClear=true):
-	for card in HandList:
-		OffHandList.append(card)
 	if bClear:
+		for card in HandList:
+			OffHandList.append(card)
 		HandList.clear()
 		CrntInfo["Point"]=BASE_POINT_NUM
 	if DeckCardList.size() < num:
